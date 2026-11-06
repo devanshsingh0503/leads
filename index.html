@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>US Small Business Underrated Leads & Direct Contacts Dashboard</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220%22%20%220%22%20%22100%22%20%22100%22><text y=%22.9em%22 font-size=%2290%22>⚡</text></svg>">
+</head>
+<body>
+
+  <!-- Top Navigation Header -->
+  <header class="app-header">
+    <div class="header-container">
+      <div class="brand-wrapper">
+        <div class="brand-icon">⚡</div>
+        <div>
+          <div class="brand-title">
+            LeadPulse USA — Underrated Leads & Direct Outreach
+            <span class="badge-live">
+              <span class="pulse-dot"></span>
+              Verified Contacts Active
+            </span>
+          </div>
+          <div class="brand-subtitle">Direct Email, WhatsApp & Decision Maker Contacts for High-Ticket US Small Businesses</div>
+        </div>
+      </div>
+
+      <div class="header-actions">
+        <button id="btnRefresh" class="btn-header">
+          🔄 Refresh Feed
+        </button>
+        <button id="btnExport" class="btn-header btn-primary">
+          📥 Export CSV (with Contacts)
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Content Layout -->
+  <main class="main-container">
+    
+    <!-- Real-time Stats Grid -->
+    <section class="stats-grid">
+      <div class="stat-card">
+        <div>
+          <div class="stat-title">Total Opportunities</div>
+          <div class="stat-value" id="statTotal">10</div>
+        </div>
+        <div class="stat-icon icon-blue">🎯</div>
+      </div>
+
+      <div class="stat-card">
+        <div>
+          <div class="stat-title">Email & WhatsApp Ready</div>
+          <div class="stat-value" id="statFresh">10</div>
+        </div>
+        <div class="stat-icon icon-emerald">💬</div>
+      </div>
+
+      <div class="stat-card">
+        <div>
+          <div class="stat-title">High-Ticket ($1k - $5k)</div>
+          <div class="stat-value" id="statHighIntent">10</div>
+        </div>
+        <div class="stat-icon icon-purple">💎</div>
+      </div>
+
+      <div class="stat-card">
+        <div>
+          <div class="stat-title">Contacted So Far</div>
+          <div class="stat-value" id="statContacted">0</div>
+        </div>
+        <div class="stat-icon icon-amber">📬</div>
+      </div>
+    </section>
+
+    <!-- Search & Filters Bar -->
+    <section class="controls-bar">
+      <div class="search-row">
+        <div class="search-input-wrapper">
+          <span class="search-icon">🔍</span>
+          <input 
+            type="text" 
+            id="searchInput" 
+            class="search-input" 
+            placeholder="Search by owner name, company, email, city (e.g. Denver, Austin, Tampa), niche..."
+          >
+        </div>
+      </div>
+
+      <!-- Diverse Niche Filter Pills -->
+      <div class="filter-pills">
+        <span class="filter-label">Niche / Industry:</span>
+        <button class="pill category-pill active" data-category="all">All Niches</button>
+        <button class="pill category-pill" data-category="Home Services">🔨 Home Services & Contractors</button>
+        <button class="pill category-pill" data-category="Health">💆 MedSpa & Aesthetics</button>
+        <button class="pill category-pill" data-category="Automotive">🚗 Auto Detailing & Wraps</button>
+        <button class="pill category-pill" data-category="Food">🥐 Bakery & Catering</button>
+        <button class="pill category-pill" data-category="Legal">⚖️ Law Firm & Advisory</button>
+        <button class="pill category-pill" data-category="Pet Care">🐕 Luxury Pet Care</button>
+        <button class="pill category-pill" data-category="Interior">🎨 Interior Architecture</button>
+        <button class="pill category-pill" data-category="Fitness">🏋️ Athletic Club</button>
+      </div>
+
+      <!-- Status Filter Pills -->
+      <div class="filter-pills">
+        <span class="filter-label">Outreach Status:</span>
+        <button class="pill status-pill active" data-status="all">All</button>
+        <button class="pill status-pill" data-status="new">⚪ Uncontacted</button>
+        <button class="pill status-pill" data-status="contacted">🟢 Contacted</button>
+        <button class="pill status-pill" data-status="saved">⭐ Saved / Follow-Up</button>
+      </div>
+    </section>
+
+    <!-- Dynamic Leads Grid -->
+    <section id="leadsGrid" class="leads-grid">
+      <!-- Injected by app.js -->
+    </section>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>
